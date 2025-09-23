@@ -3,7 +3,7 @@ from lang.ru.bot import (
     START_HOWTO,
     START_STAGES,
     HOWTO_YES, HOWTO_NO,
-    HOWTO_EDU1, HOWTO_EDU2, HOWTO_EDU3, HOWTO_EDU4
+    HOWTO_EDU1, HOWTO_EDU2, HOWTO_EDU3, HOWTO_EDU4, HOWTO_EDU5
     )
 
 howto = ReplyKeyboardMarkup(
@@ -28,6 +28,7 @@ education = ReplyKeyboardMarkup(
         KeyboardButton(text=HOWTO_EDU2),
         KeyboardButton(text=HOWTO_EDU3),
         KeyboardButton(text=HOWTO_EDU4),
+        KeyboardButton(text=HOWTO_EDU5),
     ]],
     resize_keyboard=True
 )

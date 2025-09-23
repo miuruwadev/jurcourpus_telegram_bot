@@ -1,10 +1,9 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
-from lang.ru.bot import START_HOWTO, START_STAGES
+from lang.ru.bot import START_STATUS
 
 keyboard = ReplyKeyboardMarkup(
     keyboard=[[
-        KeyboardButton(text=START_HOWTO),
-        KeyboardButton(text=START_STAGES)
+        KeyboardButton(text=START_STATUS),
     ]],
     resize_keyboard=True
 )
