@@ -32,12 +32,12 @@ def register_howto_handlers(dp: Dispatcher):
         await message.answer(HOWTO_QUE2, reply_markup=education, parse_mode="MarkdownV2")
         await state.set_state(HowToSteps.step2)
 
-    @router.message(HowToSteps.step2, F.text.in_({
+    @router.message(HowToSteps.step2, lambda message: message.text in [
         HOWTO_EDU1,
         HOWTO_EDU2,
         HOWTO_EDU3,
         HOWTO_EDU4
-    }))
+    ])
     async def handle_que3(message: Message, state: FSMContext):
         await message.answer(HOWTO_QUE3, reply_markup=simple_answer)
         await state.set_state(HowToSteps.step3)
@@ -48,9 +48,9 @@ def register_howto_handlers(dp: Dispatcher):
         await state.clear()
 
 
-    @router.message(StateFilter([HowToSteps.step1,
-                    HowToSteps.step2,
-                    HowToSteps.step3]), F.text.in_({HOWTO_NO, HOWTO_EDU5, HOWTO_NO}))
+    @router.message(HowToSteps.step1, F.text == HOWTO_NO)
+    @router.message(HowToSteps.step2, F.text == HOWTO_EDU5)
+    @router.message(HowToSteps.step3, F.text == HOWTO_NO)
     async def handle_failed(message: Message, state: FSMContext):
         await message.answer(HOWTO_FAILED, reply_markup=howto)
         await state.clear()
