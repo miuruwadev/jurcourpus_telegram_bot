@@ -23,7 +23,8 @@ simple_answer = ReplyKeyboardMarkup(
 )
 
 education = ReplyKeyboardMarkup(
-    keyboard=[[
+    keyboard=[
+        [
         KeyboardButton(text=HOWTO_EDU1),
         KeyboardButton(text=HOWTO_EDU2),
         KeyboardButton(text=HOWTO_EDU3),

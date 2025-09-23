@@ -4,12 +4,13 @@ from lang.ru.bot import (
     )
 
 stages = ReplyKeyboardMarkup(
-    keyboard=[[
-        KeyboardButton(text=STAGES_START1),
-        KeyboardButton(text=STAGES_START2),
-        KeyboardButton(text=STAGES_START3),
-        KeyboardButton(text=STAGES_START4),
-    ]],
+    keyboard=[
+        [KeyboardButton(text=STAGES_START1)],
+        [KeyboardButton(text=STAGES_START2)],
+        [KeyboardButton(text=STAGES_START3)],
+        [KeyboardButton(text=STAGES_START4)],
+        [KeyboardButton(text=STAGES_BACK)],
+    ],
     resize_keyboard=True
 )
 
