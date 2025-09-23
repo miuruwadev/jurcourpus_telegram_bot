@@ -2,19 +2,19 @@ import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 
+from handlers.start import register_start_handlers
+from handlers.howto import register_howto_handlers
+from handlers.stages import register_stages_handlers
+
 from config import TELEGRAM_BOT_TOKEN
 
-# Инициализация бота и диспетчера
 bot = Bot(token=TELEGRAM_BOT_TOKEN)
 dp = Dispatcher()
 
-# Обработчик команды /start
-@dp.message(Command("start"))
-async def send_welcome(message: types.Message):
-    await message.reply("Hello world")
-
-# Основная функция для запуска бота
 async def main():
+    register_start_handlers(dp)
+    register_howto_handlers(dp)
+    register_stages_handlers(dp)
     await dp.start_polling(bot)
 
 if __name__ == '__main__':
