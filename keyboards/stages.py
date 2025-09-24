@@ -20,3 +20,30 @@ back = ReplyKeyboardMarkup(
     ]],
     resize_keyboard=True
 )
+back1 = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text=STAGES_START2)],
+        [KeyboardButton(text=STAGES_BACK)],
+    ],
+    resize_keyboard=True
+)
+back2 = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text=STAGES_START3)],
+        [KeyboardButton(text=STAGES_BACK)],
+    ],
+    resize_keyboard=True
+)
+back3 = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text=STAGES_START4)],
+        [KeyboardButton(text=STAGES_BACK)],
+    ],
+    resize_keyboard=True
+)
+back4 = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text=STAGES_BACK)],
+    ],
+    resize_keyboard=True
+)

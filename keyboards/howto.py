@@ -2,7 +2,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from lang.ru.bot import (
     START_HOWTO,
     START_STAGES,
-    HOWTO_YES, HOWTO_NO,
+    HOWTO_YES, HOWTO_NO, HOWTO_LEARNING_JOB,
     HOWTO_EDU1, HOWTO_EDU2, HOWTO_EDU3, HOWTO_EDU4, HOWTO_EDU5
     )
 
@@ -19,6 +19,16 @@ simple_answer = ReplyKeyboardMarkup(
         KeyboardButton(text=HOWTO_YES),
         KeyboardButton(text=HOWTO_NO)
     ]],
+    resize_keyboard=True
+)
+
+simple_answer_que = ReplyKeyboardMarkup(
+    keyboard=[[
+        KeyboardButton(text=HOWTO_YES),
+        KeyboardButton(text=HOWTO_NO)
+    ],
+    [KeyboardButton(text=HOWTO_LEARNING_JOB)]
+    ],
     resize_keyboard=True
 )
 
