@@ -1,21 +1,11 @@
 import asyncio
-from aiogram import Bot, Dispatcher, types
-from aiogram.filters import Command
+from config import MODE
 
-from handlers.start import register_start_handlers
-from handlers.howto import register_howto_handlers
-from handlers.stages import register_stages_handlers
+if __name__ == "__main__":
+    if MODE == 'DEVELOPMENT':
+        from bot import main
+        asyncio.run(main())
 
-from config import TELEGRAM_BOT_TOKEN
-
-bot = Bot(token=TELEGRAM_BOT_TOKEN)
-dp = Dispatcher()
-
-async def main():
-    register_start_handlers(dp)
-    register_howto_handlers(dp)
-    register_stages_handlers(dp)
-    await dp.start_polling(bot)
-
-if __name__ == '__main__':
-    asyncio.run(main())
+    else:
+        from watcher import main
+        main()
